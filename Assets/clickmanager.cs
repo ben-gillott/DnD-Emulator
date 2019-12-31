@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+// using  UnityEngine.Tilemaps.TileBase;
 
 public class clickmanager : MonoBehaviour
 {
@@ -37,6 +38,14 @@ public class clickmanager : MonoBehaviour
             Vector3 cellPosition = gridLayout.WorldToCell(pz) + halfOff;
         
             GameObject.Find("PlayerCharacter").transform.position = cellPosition;
+            
+            GameObject grid = GameObject.FindWithTag("Ground");
+
+            // Debug.Log("Found grid: " + grid.Tilemap.GetTile(cellPosition));
+
+            // Grid grid = GameObject.Find("Grid");
+            
+            // Debug.Log("Tile value: " + grid.GetTile(cellPosition));
             // // set selectedUnit to clicked location on grid
             Debug.Log("Cell coords: " + cellPosition);
         }
